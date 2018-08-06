@@ -6,6 +6,8 @@ module config {
         BOSS1,
         LEVEL2,
         BOSS2,
+        LEVEL3,
+        BOSS3,
         END
     }
 }

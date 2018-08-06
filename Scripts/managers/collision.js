@@ -26,6 +26,16 @@ var managers;
                             managers.Game.scoreBoard.Score += 100;
                             // objects.L1_boss.Reset();
                             break;
+                        case "level2":
+                            createjs.Sound.play("bulletSound");
+                            managers.Game.scoreBoard.Score += 100;
+                            // objects.L1_boss.Reset();
+                            break;
+                        case "level3":
+                            createjs.Sound.play("bulletSound");
+                            managers.Game.scoreBoard.Score += 100;
+                            // objects.L1_boss.Reset();
+                            break;
                     }
                 }
             }

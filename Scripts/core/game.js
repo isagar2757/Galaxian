@@ -35,6 +35,7 @@
         { id: "bullet", src: "/Assets/images/bullet.png" },
         { id: "level1", src: "/Assets/images/boss1.png" },
         { id: "level2", src: "/Assets/images/boss2.png" },
+        { id: "level3", src: "/Assets/images/boss3.png" },
         { id: "collisionRock", src: "/Assets/audio/collision_rock.mp3" },
         { id: "collisionEnemy", src: "/Assets/audio/collision_enemy.mp3" },
         { id: "background", src: "/Assets/audio/background.mp3" },
@@ -97,6 +98,12 @@
                 break;
             case config.Scene.BOSS2:
                 CurrentScene = new scenes.Boss2();
+                break;
+            case config.Scene.LEVEL3:
+                CurrentScene = new scenes.Level3();
+                break;
+            case config.Scene.BOSS3:
+                CurrentScene = new scenes.Boss3();
                 break;
             case config.Scene.END:
                 CurrentScene = new scenes.End();

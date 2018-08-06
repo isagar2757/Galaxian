@@ -75,14 +75,20 @@ module managers {
             if(this._score > this.HighScore) {
                 this.HighScore = this._score;
             }
-            if(this._score >= 100) {
+            if(this._score >= 500) {
                 managers.Game.CurrentState = config.Scene.BOSS1;
             }
-            if(this._score >= 200) {
+            if(this._score >= 1000) {
                 managers.Game.CurrentState = config.Scene.LEVEL2;
             }
-            if(this._score >= 300) {
+            if(this._score >= 1500) {
                 managers.Game.CurrentState = config.Scene.BOSS2;
+            }
+            if(this._score >= 2000) {
+                managers.Game.CurrentState = config.Scene.LEVEL3;
+            }
+            if(this._score >= 3000) {
+                managers.Game.CurrentState = config.Scene.BOSS3;
             }
         }
 

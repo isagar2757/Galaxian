@@ -1,11 +1,11 @@
 module scenes {
-    export class Boss1 extends objects.Scene {
+    export class Boss3 extends objects.Scene {
         
         // member variables
         private _doodle:objects.Doodle;
         private _galaxy:objects.Galaxy;
         private _monster:objects.Monster;
-        private _boss:objects.L1_boss;
+        private _boss:objects.L3_boss;
        
         private _fireBallNum:number;
         private _fireBall:objects.FireBall[];
@@ -46,7 +46,7 @@ module scenes {
             //this.backgroungSound.volume = 0.2;
             this._doodle = new objects.Doodle();
             this._galaxy = new objects.Galaxy();
-            this._boss = new objects.L1_boss();
+            this._boss = new objects.L3_boss();
            
             this._fireBallNum = 3;
             // create an empty Array List-like object of clouds
@@ -81,12 +81,11 @@ module scenes {
                                 //this.removeChild(this._island);
                               // this._boss.y = 0;
                               this._boss.Reset();
-                              bullet.Start();
-                            // this.removeChild(bullet);
+                                this.removeChild(bullet);
                             }
                             this._boss.Update();
                             //this.addChild(this._island);
-                           // this.addChild(bullet);
+                            this.addChild(bullet);
             });
 
             

@@ -1,11 +1,10 @@
 module scenes {
-    export class Boss1 extends objects.Scene {
+    export class Level3 extends objects.Scene {
         
         // member variables
         private _doodle:objects.Doodle;
         private _galaxy:objects.Galaxy;
         private _monster:objects.Monster;
-        private _boss:objects.L1_boss;
        
         private _fireBallNum:number;
         private _fireBall:objects.FireBall[];
@@ -42,13 +41,13 @@ module scenes {
       
         // public methods
         public Start():void {
-           // this.backgroungSound = createjs.Sound.play("background");
-            //this.backgroungSound.volume = 0.2;
+            this.backgroungSound = createjs.Sound.play("background");
+            this.backgroungSound.volume = 0.2;
             this._doodle = new objects.Doodle();
             this._galaxy = new objects.Galaxy();
-            this._boss = new objects.L1_boss();
+            this._monster = new objects.Monster();
            
-            this._fireBallNum = 3;
+            this._fireBallNum = 5;
             // create an empty Array List-like object of clouds
             this._fireBall = new Array<objects.FireBall>();
             this._bullets = new Array<objects.Bullet>();
@@ -63,7 +62,7 @@ module scenes {
             this._galaxy.Update();
          
            
-            managers.Collision.check(this._doodle, this._boss);
+            managers.Collision.check(this._doodle, this._monster);
 
             this._fireBall.forEach(cloud => {
                 cloud.Update();
@@ -75,18 +74,16 @@ module scenes {
             this._bullets.forEach(bullet => {
                 
                 bullet.Update();
-                managers.Collision.check(bullet,this._boss);
-                if(this._boss.isColliding){
+                managers.Collision.check(this._monster, bullet);
+                if(bullet.isColliding){
                         
                                 //this.removeChild(this._island);
-                              // this._boss.y = 0;
-                              this._boss.Reset();
-                              bullet.Start();
-                            // this.removeChild(bullet);
+                               this._monster.x = 0;
+                                this.removeChild(bullet);
                             }
-                            this._boss.Update();
+                            this._monster.Update();
                             //this.addChild(this._island);
-                           // this.addChild(bullet);
+                            this.addChild(bullet);
             });
 
             
@@ -103,13 +100,13 @@ module scenes {
         }
 
         public Main():void {
-            console.log("Started - Boss SCENE");
+            console.log("Started - PLAY SCENE");
            
             // add the Galaxy object to the scene
             this.addChild(this._galaxy);
 
             // add the Monster object to the scene
-            this.addChild(this._boss);
+            this.addChild(this._monster);
 
             // add the Doodle object to the scene
             this.addChild(this._doodle);

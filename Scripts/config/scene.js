@@ -8,7 +8,9 @@ var config;
         Scene[Scene["BOSS1"] = 3] = "BOSS1";
         Scene[Scene["LEVEL2"] = 4] = "LEVEL2";
         Scene[Scene["BOSS2"] = 5] = "BOSS2";
-        Scene[Scene["END"] = 6] = "END";
+        Scene[Scene["LEVEL3"] = 6] = "LEVEL3";
+        Scene[Scene["BOSS3"] = 7] = "BOSS3";
+        Scene[Scene["END"] = 8] = "END";
     })(Scene = config.Scene || (config.Scene = {}));
 })(config || (config = {}));
 //# sourceMappingURL=scene.js.map

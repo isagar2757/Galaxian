@@ -10,34 +10,34 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Boss1 = /** @class */ (function (_super) {
-        __extends(Boss1, _super);
+    var Boss3 = /** @class */ (function (_super) {
+        __extends(Boss3, _super);
         // constructors
-        function Boss1() {
+        function Boss3() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // private methods
-        Boss1.prototype._buildFireBall = function () {
+        Boss3.prototype._buildFireBall = function () {
             for (var count = 0; count < this._fireBallNum; count++) {
                 this._fireBall.push(new objects.FireBall());
                 //this._clouds[count] = new objects.Cloud();
             }
         };
-        Boss1.prototype._buildBullets = function () {
+        Boss3.prototype._buildBullets = function () {
             for (var count = 0; count < this._fireBallNum; count++) {
                 this._bullets.push(new objects.Bullet());
                 //this._clouds[count] = new objects.Cloud();
             }
         };
         // public methods
-        Boss1.prototype.Start = function () {
+        Boss3.prototype.Start = function () {
             // this.backgroungSound = createjs.Sound.play("background");
             //this.backgroungSound.volume = 0.2;
             this._doodle = new objects.Doodle();
             this._galaxy = new objects.Galaxy();
-            this._boss = new objects.L1_boss();
+            this._boss = new objects.L3_boss();
             this._fireBallNum = 3;
             // create an empty Array List-like object of clouds
             this._fireBall = new Array();
@@ -46,7 +46,7 @@ var scenes;
             this._buildBullets();
             this.Main();
         };
-        Boss1.prototype.Update = function () {
+        Boss3.prototype.Update = function () {
             var _this = this;
             this._doodle.Update();
             this._galaxy.Update();
@@ -62,20 +62,19 @@ var scenes;
                     //this.removeChild(this._island);
                     // this._boss.y = 0;
                     _this._boss.Reset();
-                    bullet.Start();
-                    // this.removeChild(bullet);
+                    _this.removeChild(bullet);
                 }
                 _this._boss.Update();
                 //this.addChild(this._island);
-                // this.addChild(bullet);
+                _this.addChild(bullet);
             });
         };
-        Boss1.prototype.Reset = function () {
+        Boss3.prototype.Reset = function () {
         };
-        Boss1.prototype.Destroy = function () {
+        Boss3.prototype.Destroy = function () {
             this.removeAllChildren();
         };
-        Boss1.prototype.Main = function () {
+        Boss3.prototype.Main = function () {
             console.log("Started - Boss SCENE");
             // add the Galaxy object to the scene
             this.addChild(this._galaxy);
@@ -95,8 +94,8 @@ var scenes;
             this.addChild(managers.Game.scoreBoard.LivesLabel);
             this.addChild(managers.Game.scoreBoard.ScoreLabel);
         };
-        return Boss1;
+        return Boss3;
     }(objects.Scene));
-    scenes.Boss1 = Boss1;
+    scenes.Boss3 = Boss3;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=boss1.js.map
+//# sourceMappingURL=boss3.js.map
