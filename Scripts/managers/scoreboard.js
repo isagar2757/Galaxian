@@ -86,6 +86,12 @@ var managers;
                 if (this._score >= 100) {
                     managers.Game.CurrentState = config.Scene.BOSS1;
                 }
+                if (this._score >= 200) {
+                    managers.Game.CurrentState = config.Scene.LEVEL2;
+                }
+                if (this._score >= 300) {
+                    managers.Game.CurrentState = config.Scene.BOSS2;
+                }
             },
             enumerable: true,
             configurable: true

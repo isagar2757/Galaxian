@@ -10,35 +10,35 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Level2 = /** @class */ (function (_super) {
-        __extends(Level2, _super);
+    var Boss2 = /** @class */ (function (_super) {
+        __extends(Boss2, _super);
         // constructors
-        function Level2() {
+        function Boss2() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // private methods
-        Level2.prototype._buildFireBall = function () {
+        Boss2.prototype._buildFireBall = function () {
             for (var count = 0; count < this._fireBallNum; count++) {
                 this._fireBall.push(new objects.FireBall());
                 //this._clouds[count] = new objects.Cloud();
             }
         };
-        Level2.prototype._buildBullets = function () {
+        Boss2.prototype._buildBullets = function () {
             for (var count = 0; count < this._fireBallNum; count++) {
                 this._bullets.push(new objects.Bullet());
                 //this._clouds[count] = new objects.Cloud();
             }
         };
         // public methods
-        Level2.prototype.Start = function () {
-            this.backgroungSound = createjs.Sound.play("background");
-            this.backgroungSound.volume = 0.2;
+        Boss2.prototype.Start = function () {
+            // this.backgroungSound = createjs.Sound.play("background");
+            //this.backgroungSound.volume = 0.2;
             this._doodle = new objects.Doodle();
             this._galaxy = new objects.Galaxy();
-            this._monster = new objects.Monster();
-            this._fireBallNum = 5;
+            this._boss = new objects.L2_boss();
+            this._fireBallNum = 3;
             // create an empty Array List-like object of clouds
             this._fireBall = new Array();
             this._bullets = new Array();
@@ -46,39 +46,40 @@ var scenes;
             this._buildBullets();
             this.Main();
         };
-        Level2.prototype.Update = function () {
+        Boss2.prototype.Update = function () {
             var _this = this;
             this._doodle.Update();
             this._galaxy.Update();
-            managers.Collision.check(this._doodle, this._monster);
+            managers.Collision.check(this._doodle, this._boss);
             this._fireBall.forEach(function (cloud) {
                 cloud.Update();
                 managers.Collision.check(_this._doodle, cloud);
             });
             this._bullets.forEach(function (bullet) {
                 bullet.Update();
-                managers.Collision.check(_this._monster, bullet);
-                if (bullet.isColliding) {
+                managers.Collision.check(bullet, _this._boss);
+                if (_this._boss.isColliding) {
                     //this.removeChild(this._island);
-                    _this._monster.x = 0;
+                    // this._boss.y = 0;
+                    _this._boss.Reset();
                     _this.removeChild(bullet);
                 }
-                _this._monster.Update();
+                _this._boss.Update();
                 //this.addChild(this._island);
                 _this.addChild(bullet);
             });
         };
-        Level2.prototype.Reset = function () {
+        Boss2.prototype.Reset = function () {
         };
-        Level2.prototype.Destroy = function () {
+        Boss2.prototype.Destroy = function () {
             this.removeAllChildren();
         };
-        Level2.prototype.Main = function () {
-            console.log("Started - PLAY SCENE");
+        Boss2.prototype.Main = function () {
+            console.log("Started - Boss SCENE");
             // add the Galaxy object to the scene
             this.addChild(this._galaxy);
             // add the Monster object to the scene
-            this.addChild(this._monster);
+            this.addChild(this._boss);
             // add the Doodle object to the scene
             this.addChild(this._doodle);
             // add the FireBall(s) to the scene
@@ -93,8 +94,8 @@ var scenes;
             this.addChild(managers.Game.scoreBoard.LivesLabel);
             this.addChild(managers.Game.scoreBoard.ScoreLabel);
         };
-        return Level2;
+        return Boss2;
     }(objects.Scene));
-    scenes.Level2 = Level2;
+    scenes.Boss2 = Boss2;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=level2.js.map
+//# sourceMappingURL=boss2.js.map
