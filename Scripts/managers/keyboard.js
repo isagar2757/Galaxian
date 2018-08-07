@@ -27,9 +27,6 @@ var managers;
                 case config.Keys.RIGHT_ARROW:
                     this.moveRight = true;
                     break;
-                case config.Keys.SPACE:
-                    this.fire = true;
-                    break;
             }
         };
         Keyboard.prototype.onKeyUp = function (event) {
@@ -49,9 +46,6 @@ var managers;
                 case config.Keys.D:
                 case config.Keys.RIGHT_ARROW:
                     this.moveRight = false;
-                    break;
-                case config.Keys.SPACE:
-                    this.fire = false;
                     break;
             }
         };

@@ -19,9 +19,9 @@ module scenes {
         // public methods
         public Start():void {
             this._galaxy = new objects.Galaxy();
-            this.line1 = new objects.Label("Don't touch the Fire-Balls & kill Monsters", "30px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-200, true);
-            this.line2 = new objects.Label("Move Your Character with Mouse", "40px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-100, true);
-            this.line3 = new objects.Label("You have 5 Lives", "40px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
+            this.line1 = new objects.Label("Skip the stones And Kill the Enemies", "40px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-200, true);
+            this.line2 = new objects.Label("Move Your Plane using Arrow Keys", "40px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-100, true);
+            this.line3 = new objects.Label("You have 5 Lives", "40px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 400, true);
 
             this.Main();

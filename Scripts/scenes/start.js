@@ -22,7 +22,7 @@ var scenes;
         // public methods
         Start.prototype.Start = function () {
             this._galaxy = new objects.Galaxy();
-            this._welcomeLabel = new objects.Label("Galaxian", "80px", "boston", "#FFE000", config.Screen.HALF_WIDTH - 25, config.Screen.HALF_HEIGHT - 20, true);
+            this._welcomeLabel = new objects.Label("Galaxian", "80px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT - 20, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH + 100, config.Screen.HALF_HEIGHT + 120, true);
             this._instructionButton = new objects.Button("NextButton", config.Screen.HALF_WIDTH - 100, config.Screen.HALF_HEIGHT + 120, true);
             this.Main();

@@ -43,9 +43,7 @@ module managers {
           this.moveRight = true;
         break;
 
-        case config.Keys.SPACE:
-          this.fire = true;
-        break;
+       
 
       }
     }
@@ -72,9 +70,7 @@ module managers {
           this.moveRight = false;
         break;
 
-        case config.Keys.SPACE:
-          this.fire = false;
-        break;
+       
 
       }
     }
