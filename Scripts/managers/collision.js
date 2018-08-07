@@ -6,6 +6,7 @@ var managers;
         Collision.check = function (object1, object2) {
             var P1 = new math.Vec2(object1.x, object1.y);
             var P2 = new math.Vec2(object2.x, object2.y);
+            var buletSound;
             if (math.Vec2.Distance(P1, P2) < (object1.halfHeight + object2.halfHeight)) {
                 if (!object2.isColliding) {
                     object2.isColliding = true;
@@ -18,21 +19,25 @@ var managers;
                             managers.Game.scoreBoard.Lives -= 1;
                             break;
                         case "bullet":
-                            createjs.Sound.play("bulletSound");
+                            buletSound = createjs.Sound.play("bulletSound");
+                            buletSound.volume = 0.1;
                             managers.Game.scoreBoard.Score += 100;
                             break;
                         case "level1":
-                            createjs.Sound.play("bulletSound");
+                            buletSound = createjs.Sound.play("bulletSound");
+                            buletSound.volume = 0.1;
                             managers.Game.scoreBoard.Score += 100;
                             // objects.L1_boss.Reset();
                             break;
                         case "level2":
-                            createjs.Sound.play("bulletSound");
+                            buletSound = createjs.Sound.play("bulletSound");
+                            buletSound.volume = 0.1;
                             managers.Game.scoreBoard.Score += 100;
                             // objects.L1_boss.Reset();
                             break;
                         case "level3":
-                            createjs.Sound.play("bulletSound");
+                            buletSound = createjs.Sound.play("bulletSound");
+                            buletSound.volume = 0.1;
                             managers.Game.scoreBoard.Score += 100;
                             // objects.L1_boss.Reset();
                             break;

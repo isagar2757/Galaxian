@@ -38,7 +38,7 @@ var scenes;
             this._doodle = new objects.Doodle();
             this._galaxy = new objects.Galaxy();
             this._boss = new objects.L3_boss();
-            this._fireBallNum = 3;
+            this._fireBallNum = 5;
             // create an empty Array List-like object of clouds
             this._fireBall = new Array();
             this._bullets = new Array();
@@ -93,6 +93,7 @@ var scenes;
             }
             this.addChild(managers.Game.scoreBoard.LivesLabel);
             this.addChild(managers.Game.scoreBoard.ScoreLabel);
+            this.addChild(managers.Game.scoreBoard.LevelLabel);
         };
         return Boss3;
     }(objects.Scene));

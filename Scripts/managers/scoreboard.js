@@ -19,6 +19,13 @@ var managers;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ScoreBoard.prototype, "LevelLabel", {
+            get: function () {
+                return this._levelLabel;
+            },
+            enumerable: true,
+            configurable: true
+        });
         Object.defineProperty(ScoreBoard.prototype, "ScoreLabel", {
             /**
              * This returns a reference to the ScoreLabel object
@@ -80,6 +87,7 @@ var managers;
             set: function (newValue) {
                 this._score = newValue;
                 this.ScoreLabel.text = "Score: " + this._score;
+                this.LevelLabel.text = "Level: 1";
                 if (this._score > this.HighScore) {
                     this.HighScore = this._score;
                 }
@@ -87,16 +95,21 @@ var managers;
                     managers.Game.CurrentState = config.Scene.BOSS1;
                 }
                 if (this._score >= 1000) {
+                    this.LevelLabel.text = "Level: 2";
                     managers.Game.CurrentState = config.Scene.LEVEL2;
                 }
                 if (this._score >= 1500) {
                     managers.Game.CurrentState = config.Scene.BOSS2;
                 }
                 if (this._score >= 2000) {
+                    this.LevelLabel.text = "Level: 3";
                     managers.Game.CurrentState = config.Scene.LEVEL3;
                 }
                 if (this._score >= 3000) {
                     managers.Game.CurrentState = config.Scene.BOSS3;
+                }
+                if (this._score >= 4000) {
+                    managers.Game.CurrentState = config.Scene.WIN;
                 }
             },
             enumerable: true,
@@ -108,6 +121,7 @@ var managers;
             this._livesLabel = new objects.Label("Lives: 99", "30px", "Consolas", "#E07AA2", 20, 20, false);
             this._scoreLabel = new objects.Label("Score: 99999", "30px", "Consolas", "#E07AA2", 600, 20, false);
             this._highScoreLabel = new objects.Label("High Score: 999999", "60px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT - 150, true);
+            this._levelLabel = new objects.Label("Level: 9", "30px", "Consolas", "#E07AA2", 300, 20, false);
             this.HighScore = 0;
             this.Reset();
         };

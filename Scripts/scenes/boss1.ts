@@ -124,6 +124,7 @@ module scenes {
             }
             this.addChild(managers.Game.scoreBoard.LivesLabel);
             this.addChild(managers.Game.scoreBoard.ScoreLabel);
+            this.addChild(managers.Game.scoreBoard.LevelLabel);
            
         }
 

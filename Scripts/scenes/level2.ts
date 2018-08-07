@@ -47,7 +47,7 @@ module scenes {
             this._galaxy = new objects.Galaxy();
             this._monster = new objects.Monster();
            
-            this._fireBallNum = 5;
+            this._fireBallNum = 4;
             // create an empty Array List-like object of clouds
             this._fireBall = new Array<objects.FireBall>();
             this._bullets = new Array<objects.Bullet>();
@@ -121,6 +121,7 @@ module scenes {
             }
             this.addChild(managers.Game.scoreBoard.LivesLabel);
             this.addChild(managers.Game.scoreBoard.ScoreLabel);
+            this.addChild(managers.Game.scoreBoard.LevelLabel);
            
         }
 

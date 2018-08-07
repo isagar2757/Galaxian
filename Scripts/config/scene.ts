@@ -8,6 +8,7 @@ module config {
         BOSS2,
         LEVEL3,
         BOSS3,
+        WIN,
         END
     }
 }

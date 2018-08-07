@@ -36,6 +36,7 @@
         { id: "level1", src: "/Assets/images/boss1.png" },
         { id: "level2", src: "/Assets/images/boss2.png" },
         { id: "level3", src: "/Assets/images/boss3.png" },
+        { id: "timer", src: "/Assets/images/coin.png" },
         { id: "collisionRock", src: "/Assets/audio/collision_rock.mp3" },
         { id: "collisionEnemy", src: "/Assets/audio/collision_enemy.mp3" },
         { id: "background", src: "/Assets/audio/background.mp3" },
@@ -107,6 +108,9 @@
                 break;
             case config.Scene.END:
                 CurrentScene = new scenes.End();
+                break;
+            case config.Scene.WIN:
+                CurrentScene = new scenes.Win();
                 break;
         }
         managers.Game.CurrentScene = CurrentScene;
