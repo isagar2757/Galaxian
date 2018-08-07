@@ -113,10 +113,10 @@ module managers {
 
         // public methods
         public Start() {
-            this._livesLabel = new objects.Label("Lives: 99", "30px", "Consolas", "#E07AA2", 20, 20, false);
-            this._scoreLabel = new objects.Label("Score: 99999", "30px", "Consolas", "#E07AA2", 600, 20, false);
-            this._highScoreLabel = new objects.Label("High Score: 999999", "60px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-150, true);
-            this._levelLabel = new objects.Label("Level: 9", "30px", "Consolas", "#E07AA2", 300, 20, false);
+            this._livesLabel = new objects.Label("Lives: 99", "30px", "Consolas", "#FFE000", 20, 20, false);
+            this._scoreLabel = new objects.Label("Score: 99999", "30px", "Consolas", "#FFE000", 600, 20, false);
+            this._highScoreLabel = new objects.Label("High Score: 999999", "60px", "Consolas", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT-150, true);
+            this._levelLabel = new objects.Label("Level: 9", "30px", "Consolas", "#FFE000", 300, 20, false);
             this.HighScore = 0;
             this.Reset();
         }

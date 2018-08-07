@@ -10,22 +10,6 @@
     let ScoreBoard: managers.ScoreBoard;
     let keyboardManager: managers.Keyboard;
 
-    // let Manifest = [
-    //     {id: "StartButton", src:"/Assets/images/playBtn.png"},
-    //     {id: "NextButton", src:"/Assets/images/instructionBtn.png"},
-    //     {id: "BackButton", src:"/Assets/images/replayBtn.png"},
-    //     {id: "plane", src:"/Assets/images/doodle.png"},
-    //     {id: "island", src:"/Assets/images/monster.png"},
-    //     {id: "coin", src:"/Assets/images/replayBtn.png"},
-    //     {id: "ocean", src:"/Assets/images/dark.png"},
-    //     {id: "cloud", src:"/Assets/images/fireball.png"},
-    //     {id: "bullet", src:"/Assets/images/bullet.png"},
-    //     {id: "yay", src:"/Assets/audio/ouch.mp3"},
-    //     {id: "thunder", src:"/Assets/audio/collision.mp3"},
-    //     {id: "background", src:"/Assets/audio/background.mp3"},
-    //     {id: "explosion", src:"/Assets/audio/hit.mp3"}
-        
-    // ]
 
     let Manifest = [
         {id: "StartButton", src:"/Assets/images/playBtn.png"},
