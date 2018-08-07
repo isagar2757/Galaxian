@@ -118,10 +118,10 @@ var managers;
         // private methods
         // public methods
         ScoreBoard.prototype.Start = function () {
-            this._livesLabel = new objects.Label("Lives: 99", "30px", "Consolas", "#FFE000", 20, 20, false);
-            this._scoreLabel = new objects.Label("Score: 99999", "30px", "Consolas", "#FFE000", 600, 20, false);
-            this._highScoreLabel = new objects.Label("High Score: 999999", "60px", "Consolas", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT - 150, true);
-            this._levelLabel = new objects.Label("Level: 9", "30px", "Consolas", "#FFE000", 300, 20, false);
+            this._livesLabel = new objects.Label("Lives: 99", "30px", "boston", "#FFE000", 20, 20, false);
+            this._scoreLabel = new objects.Label("Score: 99999", "30px", "boston", "#FFE000", 600, 20, false);
+            this._highScoreLabel = new objects.Label("High Score: 999999", "60px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT - 150, true);
+            this._levelLabel = new objects.Label("Level: 9", "30px", "boston", "#FFE000", 300, 20, false);
             this.HighScore = 0;
             this.Reset();
         };

@@ -17,7 +17,7 @@ module scenes {
         // public methods
         public Start():void {
             this._galaxy = new objects.Galaxy();
-            this._endLabel = new objects.Label("You Win!", "60px", "Consolas", "#E07AA2", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
+            this._endLabel = new objects.Label("You Win!", "60px", "boston", "#FFE000", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
             this._backButton = new objects.Button("BackButton", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT+100, true);
 
             this.Main();
